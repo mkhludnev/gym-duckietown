@@ -636,7 +636,7 @@ class Simulator(gym.Env):
 
             # Randomize whether the object is visible or not
             if obj.optional and self.domain_rand:
-                obj.visible = self.np_random.randint(0, 2) == 0
+                obj.visible = self.np_random.integers(0, 2) == 0
             else:
                 obj.visible = True
 
@@ -654,7 +654,7 @@ class Simulator(gym.Env):
                 tile = self.start_tile
             else:
                 # Select a random drivable tile to start on
-                tile_idx = self.np_random.randint(0, len(self.drivable_tiles))
+                tile_idx = self.np_random.integers(0, len(self.drivable_tiles))
                 tile = self.drivable_tiles[tile_idx]
 
         # If the map specifies a starting pose
